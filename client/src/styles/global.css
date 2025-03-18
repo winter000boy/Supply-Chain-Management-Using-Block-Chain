@@ -1,34 +1,117 @@
-/* Global Styles */
+/* 🌍 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #141e30, #243b55);
-    color: #ffffff;
+  background: #f4f7fc;
+  color: #333;
+  transition: background 0.3s ease-in-out;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 🎨 Button Styling */
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0078a0, #00c6ff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #005670, #0093d1);
+  transform: scale(1.05);
+}
+
+/* 📑 Input Fields */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0078a0;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 120, 160, 0.5);
+}
+
+/* 📦 Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #0078a0;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+tr:hover {
+  background: rgba(0, 120, 160, 0.1);
+}
+
+/* 🚀 Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 15px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  color: #00c6ff;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
   }
-  
-  /* Center Loader */
-  .loader-container {
-    display: flex;
+
+  .navbar {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
   }
-  
-  .loader {
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid #00c6ff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 15px;
+
+  button {
+    width: 100%;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
+}

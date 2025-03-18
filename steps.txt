@@ -1,0 +1,33 @@
+ganache-cli --port 7545
+
+
+truffle compile
+
+
+truffle migrate --reset
+
+
+truffle console
+
+    contractInstance = await SupplyChain.deployed();
+    contractInstance.address;
+
+
+cd server
+
+npm start    # Start the backend server
+
+
+
+cd client
+npm install  # Install dependencies (if not already installed)
+npm start    # Start the frontend app
+
+
+contractInstance.addMedicine("Paracetamol", "Used for fever", { from: accounts[0] });
+
+
+
+contractInstance.showStage(1);
+
+
