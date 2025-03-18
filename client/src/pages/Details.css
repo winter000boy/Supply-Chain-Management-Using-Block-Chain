@@ -1,0 +1,27 @@
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1e293b;
+    color: white;
+    text-align: center;
+  }
+  
+  .item-details {
+    background: #374151;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .item-details h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .item-details p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  

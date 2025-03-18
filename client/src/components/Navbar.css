@@ -1,10 +1,16 @@
-.navbar {
+ .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background: linear-gradient(to right, #141e30, #243b55);
     color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   
   .navbar ul {
