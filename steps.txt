@@ -20,7 +20,6 @@ npm start    # Start the backend server
 
 
 cd client
-npm install  # Install dependencies (if not already installed)
 npm start    # Start the frontend app
 
 

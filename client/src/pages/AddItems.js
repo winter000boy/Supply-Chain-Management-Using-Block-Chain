@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { initContract } from "../blockchain/web3";
 import "./AddItems.css"; // Ensure correct import
 
 const AddItems = () => {
-  const history = useHistory();
+  const navigate = useNavigate(); // Replaced useHistory with useNavigate
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [items, setItems] = useState([]);
@@ -25,7 +25,9 @@ const AddItems = () => {
       const contractInstance = await initContract();
       if (!contractInstance) throw new Error("Blockchain contract not initialized.");
 
-      const accounts = await window.web3.eth.getAccounts();
+      const accounts = await window.ethereum.request({ method: "eth_accounts" });
+      if (!accounts.length) throw new Error("No accounts found. Please connect your wallet.");
+      
       setAccount(accounts[0]);
       setContract(contractInstance);
 

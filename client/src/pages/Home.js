@@ -1,9 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
@@ -11,15 +11,15 @@ const Home = () => {
       <p className="home-description">
         Track and manage supply chain items securely with blockchain technology.
       </p>
-      
+
       <div className="home-buttons">
-        <button onClick={() => history.push("/add-items")} className="btn">
+        <button onClick={() => navigate("/add-items")} className="btn">
           Add Items
         </button>
-        <button onClick={() => history.push("/track")} className="btn">
+        <button onClick={() => navigate("/track")} className="btn">
           Track Items
         </button>
-        <button onClick={() => history.push("/roles")} className="btn">
+        <button onClick={() => navigate("/roles")} className="btn">
           Assign Roles
         </button>
       </div>

@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AssignRoles from "./pages/AssignRoles";
 import Home from "./pages/Home";
-import AddItem from "./pages/AddItem";
+import AddItems from "./pages/AddItems"; // Updated name
 import Supply from "./pages/Supply";
 import Track from "./pages/Track";
 import Navbar from "./components/Navbar";
-import "./styles/App.css";
+import "./src/App.css";
 import { motion } from "framer-motion";
 
 const pageVariants = {
@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/roles" element={<AssignRoles />} />
-          <Route path="/additem" element={<AddItem />} />
+          <Route path="/add-items" element={<AddItems />} /> {/* Fixed route */}
           <Route path="/supply" element={<Supply />} />
           <Route path="/track" element={<Track />} />
         </Routes>
