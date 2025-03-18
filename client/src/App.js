@@ -1,24 +1,40 @@
-import './App.css';
-import AssignRoles from './AssignRoles';
-import Home from './Home';
-import AddMed from './AddMed';
-import Supply from './Supply'
-import Track from './Track'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AssignRoles from "./pages/AssignRoles";
+import Home from "./pages/Home";
+import AddItem from "./pages/AddItem";
+import Supply from "./pages/Supply";
+import Track from "./pages/Track";
+import Navbar from "./components/Navbar";
+import "./styles/App.css";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+};
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/roles" component={AssignRoles} />
-          <Route path="/addmed" component={AddMed} />
-          <Route path="/supply" component={Supply} />
-          <Route path="/track" component={Track} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Navbar />
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={{ duration: 0.5 }}
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/roles" element={<AssignRoles />} />
+          <Route path="/additem" element={<AddItem />} />
+          <Route path="/supply" element={<Supply />} />
+          <Route path="/track" element={<Track />} />
+        </Routes>
+      </motion.div>
+    </Router>
   );
 }
 
